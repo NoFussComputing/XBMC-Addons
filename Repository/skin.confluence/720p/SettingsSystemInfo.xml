@@ -274,7 +274,7 @@
 					<font>font13</font>
 				</control>
 				<control type="label" id="52">
-					<description>Kodi Build Version</description>
+					<description>XBMC BUILD Version</description>
 					<left>20</left>
 					<top>400</top>
 					<width>730</width>

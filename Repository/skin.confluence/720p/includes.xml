@@ -7,11 +7,10 @@
 	<include file="ViewsPictures.xml"/>
 	<include file="ViewsAddonBrowser.xml"/>
 	<include file="ViewsLiveTV.xml"/>
-	<include file="ViewsPVRGuide.xml"/>
+	<include file="ViewsPVR.xml"/>
 	<include file="IncludesCodecFlagging.xml"/>
 	<include file="IncludesHomeRecentlyAdded.xml"/>
 	<include file="IncludesHomeMenuItems.xml"/>
-	<include file="IncludesPVR.xml"/>
 	<include file="IncludesBackgroundBuilding.xml"/>
 	<include file="weather\10DayForecast.xml"/>
 	<include file="weather\36HourForecast.xml"/>
@@ -324,7 +323,7 @@
 				<top>30r</top>
 				<width>700</width>
 				<height>20</height>
-				<label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelNumberLabel, - ([COLOR=blue],[/COLOR])]</label>
+				<label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelNumber, - ([COLOR=blue],[/COLOR])]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -648,7 +647,7 @@
 				<onup>610</onup>
 				<ondown>611</ondown>
 				<onclick>down</onclick>
-				<onclick>PlayerControl(Stop)</onclick>
+				<onclick>XBMC.PlayerControl(Stop)</onclick>
 			</control>
 			<control type="togglebutton" id="604">
 				<left>140</left>
@@ -666,7 +665,7 @@
 				<onup>610</onup>
 				<ondown>606</ondown>
 				<onback>50</onback>
-				<onclick>PlayerControl(Play)</onclick>
+				<onclick>XBMC.PlayerControl(Play)</onclick>
 				<enable>Player.PauseEnabled</enable>
 				<animation effect="fade" start="100" end="30" time="100" condition="!Player.PauseEnabled">Conditional</animation>
 			</control>
@@ -682,7 +681,7 @@
 				<onright>50</onright>
 				<onup>610</onup>
 				<ondown>611</ondown>
-				<onclick>PlayerControl(record)</onclick>
+				<onclick>XBMC.PlayerControl(record)</onclick>
 				<enable>Player.CanRecord</enable>
 				<animation effect="fade" start="100" end="30" time="100" condition="!Player.CanRecord">Conditional</animation>
 			</control>
@@ -707,7 +706,7 @@
 				<onup>610</onup>
 				<ondown>611</ondown>
 				<onback>50</onback>
-				<onclick>PlayerControl(Previous)</onclick>
+				<onclick>XBMC.PlayerControl(Previous)</onclick>
 			</control>
 			<control type="button" id="606">
 				<left>45</left>
@@ -722,7 +721,7 @@
 				<onup>610</onup>
 				<ondown>611</ondown>
 				<onback>50</onback>
-				<onclick>PlayerControl(Rewind)</onclick>
+				<onclick>XBMC.PlayerControl(Rewind)</onclick>
 				<visible>Window.IsVisible(MusicPlaylist) | Window.IsVisible(VideoPlaylist) | Player.HasVideo</visible>
 			</control>
 			<control type="group">
@@ -743,7 +742,7 @@
 					<onup>610</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
-					<onclick>PlayerControl(Play)</onclick>
+					<onclick>XBMC.PlayerControl(Play)</onclick>
 				</control>
 				<control type="button" id="601">
 					<left>85</left>
@@ -759,7 +758,7 @@
 					<ondown>611</ondown>
 					<onback>50</onback>
 					<onclick>down</onclick>
-					<onclick>PlayerControl(Stop)</onclick>
+					<onclick>XBMC.PlayerControl(Stop)</onclick>
 				</control>
 				<control type="button" id="607">
 					<left>125</left>
@@ -774,7 +773,7 @@
 					<onup>610</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
-					<onclick>PlayerControl(Forward)</onclick>
+					<onclick>XBMC.PlayerControl(Forward)</onclick>
 					<visible>Window.IsVisible(MusicPlaylist) | Window.IsVisible(VideoPlaylist) | Player.HasVideo</visible>
 				</control>
 				<control type="button" id="602">
@@ -790,7 +789,7 @@
 					<onup>610</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
-					<onclick>PlayerControl(Next)</onclick>
+					<onclick>XBMC.PlayerControl(Next)</onclick>
 					<animation effect="slide" start="0,0" end="40,0" time="0" condition="Window.IsVisible(MusicPlaylist) | Window.IsVisible(VideoPlaylist) | Player.HasVideo">Conditional</animation>
 				</control>
 			</control>
@@ -804,7 +803,7 @@
 					<label>-</label>
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<onclick>PlayerControl(Repeat)</onclick>
+					<onclick>XBMC.PlayerControl(Repeat)</onclick>
 					<onleft>602</onleft>
 					<onright>605</onright>
 					<onup>610</onup>
@@ -876,7 +875,7 @@
 					<usealttexture>Playlist.IsRandom</usealttexture>
 					<alttexturefocus>OSDRandomOnFO.png</alttexturefocus>
 					<alttexturenofocus>OSDRandomOnNF.png</alttexturenofocus>
-					<onclick>PlayerControl(Random)</onclick>
+					<onclick>XBMC.PlayerControl(Random)</onclick>
 					<onleft>604</onleft>
 					<onright>50</onright>
 					<onup>610</onup>
@@ -988,7 +987,7 @@
 				<texture diffuse="diffuse_mirror2.png" flipy="true" background="true">$INFO[ListItem.Icon]</texture>
 			</control>
 			<control type="label">
-				<left>1</left>
+				<left>91</left>
 				<top>125</top>
 				<width>180</width>
 				<height>20</height>
@@ -1031,7 +1030,7 @@
 				<texture diffuse="diffuse_mirror2.png" flipy="true" background="true">$INFO[ListItem.Icon]</texture>
 			</control>
 			<control type="label">
-				<left>1</left>
+				<left>91</left>
 				<top>125</top>
 				<width>180</width>
 				<height>20</height>
@@ -1043,7 +1042,7 @@
 				<visible>Control.HasFocus(9002)</visible>
 			</control>
 			<control type="label">
-				<left>1</left>
+				<left>91</left>
 				<top>125</top>
 				<width>180</width>
 				<height>20</height>
@@ -1097,7 +1096,7 @@
 			</control>
 			<control type="label">
 				<description>Episode Number</description>
-				<left>10</left>
+				<left>140</left>
 				<top>60</top>
 				<width>260</width>
 				<height>15</height>
@@ -1108,7 +1107,7 @@
 			</control>
 			<control type="label">
 				<description>Episode Name</description>
-				<left>10</left>
+				<left>140</left>
 				<top>80</top>
 				<width>260</width>
 				<height>15</height>
@@ -1119,7 +1118,7 @@
 			</control>
 			<control type="label">
 				<description>Next air date/time</description>
-				<left>10</left>
+				<left>140</left>
 				<top>100</top>
 				<width>260</width>
 				<height>15</height>
@@ -1130,7 +1129,7 @@
 			</control>
 			<control type="label">
 				<description>Duration</description>
-				<left>10</left>
+				<left>140</left>
 				<top>120</top>
 				<width>260</width>
 				<height>15</height>
@@ -1180,7 +1179,7 @@
 			</control>
 			<control type="label">
 				<description>Episode Number</description>
-				<left>10</left>
+				<left>140</left>
 				<top>60</top>
 				<width>260</width>
 				<height>15</height>
@@ -1191,7 +1190,7 @@
 			</control>
 			<control type="label">
 				<description>Episode Name</description>
-				<left>10</left>
+				<left>140</left>
 				<top>80</top>
 				<width>260</width>
 				<height>15</height>
@@ -1202,7 +1201,7 @@
 			</control>
 			<control type="label">
 				<description>Next air date/time</description>
-				<left>10</left>
+				<left>140</left>
 				<top>100</top>
 				<width>260</width>
 				<height>15</height>
@@ -1213,7 +1212,7 @@
 			</control>
 			<control type="label">
 				<description>Duration</description>
-				<left>10</left>
+				<left>140</left>
 				<top>120</top>
 				<width>260</width>
 				<height>15</height>
@@ -1239,15 +1238,5 @@
 	<include name="VisibleFadeEffect">
 		<animation effect="fade" time="300">Visible</animation>
 		<animation effect="fade" time="300">Hidden</animation>
-	</include>
-	<include name="KeyboardButton">
-		<width>50</width>
-		<height>50</height>
-		<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
-		<texturefocus border="5">KeyboardKey.png</texturefocus>
-		<align>center</align>
-		<aligny>center</aligny>
-		<font>font13</font>
-		<focusedcolor>black</focusedcolor>
 	</include>
 </includes>

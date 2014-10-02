@@ -16,7 +16,7 @@
 				<visible>!Container.Content(LiveTV)</visible>
 				<left>-183</left>
 				<top>0</top>
-				<width>1343</width>
+				<width>1526</width>
 				<height>390</height>
 				<onleft>501</onleft>
 				<onright>501</onright>
@@ -793,7 +793,7 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="label">
-						<left>10</left>
+						<left>510</left>
 						<top>0</top>
 						<width>500</width>
 						<height>40</height>
@@ -812,7 +812,6 @@
 						<width>40</width>
 						<height>26</height>
 						<texture>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</texture>
-						<aspectratio>keep</aspectratio>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>!ListItem.IsStereoscopic</visible>
 					</control>
@@ -831,7 +830,6 @@
 						<width>20</width>
 						<height>16</height>
 						<texture>$INFO[ListItem.Overlay]</texture>
-						<aspectratio>keep</aspectratio>
 						<visible>!ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
@@ -883,7 +881,7 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="label">
-						<left>10</left>
+						<left>510</left>
 						<top>0</top>
 						<width>500</width>
 						<height>40</height>
@@ -902,7 +900,6 @@
 						<width>40</width>
 						<height>26</height>
 						<texture>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</texture>
-						<aspectratio>keep</aspectratio>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>!ListItem.IsStereoscopic</visible>
 					</control>
@@ -921,7 +918,6 @@
 						<width>20</width>
 						<height>16</height>
 						<texture>$INFO[ListItem.Overlay]</texture>
-						<aspectratio>keep</aspectratio>
 						<visible>!ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
@@ -1247,7 +1243,7 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="label">
-						<left>10</left>
+						<left>510</left>
 						<top>0</top>
 						<width>500</width>
 						<height>40</height>
@@ -1266,7 +1262,6 @@
 						<width>40</width>
 						<height>26</height>
 						<texture>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</texture>
-						<aspectratio>keep</aspectratio>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>!ListItem.IsStereoscopic</visible>
 					</control>
@@ -1285,7 +1280,6 @@
 						<width>20</width>
 						<height>16</height>
 						<texture>$INFO[ListItem.Overlay]</texture>
-						<aspectratio>keep</aspectratio>
 						<visible>!ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
@@ -1337,7 +1331,7 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="label">
-						<left>10</left>
+						<left>510</left>
 						<top>0</top>
 						<width>500</width>
 						<height>40</height>
@@ -1356,7 +1350,6 @@
 						<width>40</width>
 						<height>26</height>
 						<texture>$INFO[ListItem.VideoResolution,flagging/lists/,.png]</texture>
-						<aspectratio>keep</aspectratio>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 						<visible>!ListItem.IsStereoscopic</visible>
 					</control>
@@ -1375,7 +1368,6 @@
 						<width>20</width>
 						<height>16</height>
 						<texture>$INFO[ListItem.Overlay]</texture>
-						<aspectratio>keep</aspectratio>
 						<visible>!ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
@@ -1674,7 +1666,6 @@
 						<width>20</width>
 						<height>16</height>
 						<texture>$INFO[ListItem.Overlay]</texture>
-						<aspectratio>keep</aspectratio>
 						<visible>!ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
@@ -1723,7 +1714,6 @@
 						<width>20</width>
 						<height>16</height>
 						<texture>$INFO[ListItem.Overlay]</texture>
-						<aspectratio>keep</aspectratio>
 						<visible>!ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
