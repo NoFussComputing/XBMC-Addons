@@ -1,0 +1,1 @@
+This folder is where the zipped up addons will be kept.
