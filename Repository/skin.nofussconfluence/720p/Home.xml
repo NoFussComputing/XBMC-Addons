@@ -807,6 +807,76 @@
 				<height>6</height>
 				<texture>HomeOverlay1.png</texture>
 			</control>
+			
+			
+<!--------- Database Statistic ------------------->			
+			<control type="group">
+				<posx>0</posx>
+				<posy>0</posy>
+				<!--<visible>[Container(9000).HasFocus(3) | Container(9000).HasFocus(17) | Container(9000).HasFocus(10) | Container(9000).HasFocus(11)] + Skin.HasSetting(DatabaseStats) + !Player.HasMedia</visible>
+				<animation effect="slide" start ="320,0" end="0,0" time="300" delay="1200" condition="Container(9000).HasFocus(3) | Container(9000).HasFocus(17) | Container(9000).HasFocus(10) | Container(9000).HasFocus(11)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,130" time="0" condition="Skin.HasSetting(LowerMenu)">Conditional</animation>-->
+			<!--<control type="image">
+				<posx>995</posx>
+				<posy>-25</posy>
+				<width>330</width>
+				<height>30</height>
+				<texture flipx="true" flipy="true">header.png</texture>
+			</control>
+			<control type="image">
+				<posx>1023</posx>
+				<posy>-50</posy>
+				<width>330</width>
+				<height>30</height>
+				<texture flipx="true" flipy="true">header.png</texture>
+				<visible>Container(9000).HasFocus(11)</visible>
+			</control>	-->		
+			<control type="label">
+				<posx>490</posx>
+				<posy>-93</posy>
+				<width>300</width>
+				<label>Total Movies: $INFO[Window(Home).Property(Movies.Count)]</label>
+				<align>center</align>
+				<visible>Container(9000).HasFocus(10)</visible>
+			</control>
+			<control type="label">
+				<posx>450</posx>
+				<posy>-93</posy>
+				<width>400</width>
+				<label>Total Episodes: $INFO[Window(Home).Property(Episodes.Count)]</label>
+				<align>center</align>
+				<visible>Container(9000).HasFocus(11)</visible>
+			</control>
+			<control type="label">
+				<posx>450</posx>
+				<posy>-68</posy>
+				<width>400</width>
+				<label>Total TV Shows: $INFO[Window(Home).Property(TVShows.Count)]</label>
+				<align>center</align>
+				<visible>Container(9000).HasFocus(11)</visible>
+			</control>			
+			<control type="label">
+				<posx>490</posx>
+				<posy>-93</posy>
+				<width>300</width>
+				<label>$LOCALIZE[50034]: $INFO[Window(Home).Property(Music.AlbumsCount)]</label>
+				<align>center</align>
+				<visible>Container(9000).HasFocus(3)</visible>
+			</control>
+			<control type="label">
+				<posx>490</posx>
+				<posy>-93</posy>
+				<width>300</width>
+				<label>$LOCALIZE[50035]: $INFO[Window(Home).Property(MusicVideos.Count)]</label>
+				<align>center</align>
+				<visible>Container(9000).HasFocus(17)</visible>
+			</control>
+			</control>
+<!-------- Database Statistic End ----------------->			
+			
+			
+			
+			
 			<control type="fixedlist" id="9000">
 				<left>-110</left>
 				<top>5</top>
@@ -921,14 +991,16 @@
 					</item>
 					<item id="10">
 						<label>31954</label>
-						<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
+						<!--<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>-->
+						<onclick>ActivateWindow(10025,smb://172.16.2.36/public/@@.MediaCenters/XBMC/01.Config/v13/Playlists/video/MenuPlaylist-Movies.xsp,return)</onclick>
 						<icon>-</icon>
 						<thumb>-</thumb>
 						<visible>!Skin.HasSetting(HomeMenuNoMovieButton) + Library.HasContent(Movies)</visible>
 					</item>
 					<item id="11">
 						<label>31955</label>
-						<onclick>ActivateWindow(Videos,TVShowTitles,return)</onclick>
+						<!--<onclick>ActivateWindow(Videos,TVShowTitles,return)</onclick> -->
+						<onclick>ActivateWindow(10025,smb://172.16.2.36/public/@@.MediaCenters/XBMC/01.Config/v13/Playlists/video/MenuPlaylist-TVShows.xsp,return)</onclick>
 						<icon>-</icon>
 						<thumb>-</thumb>
 						<visible>!Skin.HasSetting(HomeMenuNoTVShowButton) + Library.HasContent(TVShows)</visible>

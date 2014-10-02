@@ -1,22 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<window>
+<window id="2005">
 	<defaultcontrol>-</defaultcontrol>
 	<controls>
 		<!-- media infos -->
 		<control type="group" id="1">
-			<visible>[Player.ShowInfo | Window.IsActive(VideoOSD)] + ![Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(SliderDialog)]</visible>
+			<visible>[Player.ShowInfo | Window.IsActive(VideoOSD)] + ![Window.IsVisible(123) | Window.IsVisible(124) | Window.IsVisible(125) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<control type="image" id="1">
-				<left>0</left>
-				<top>-150</top>
+				<posx>0</posx>
+				<posy>-150</posy>
 				<width>1280</width>
 				<height>256</height>
-				<texture flipy="true" border="1">HomeNowPlayingBack.png</texture>
+				<texture flipy="true">HomeNowPlayingBack.png</texture>
 			</control>
 			<control type="label" id="1">
 				<description>Chapter Count Header label</description>
-				<left>30</left>
-				<top>5</top>
+				<posx>30</posx>
+				<posy>5</posy>
 				<width>1000</width>
 				<height>25</height>
 				<align>left</align>
@@ -29,8 +28,8 @@
 			</control>
 			<control type="label" id="1">
 				<description>Channel Group label</description>
-				<left>30</left>
-				<top>5</top>
+				<posx>30</posx>
+				<posy>5</posy>
 				<width>1000</width>
 				<height>25</height>
 				<align>left</align>
@@ -43,8 +42,8 @@
 			</control>
 			<control type="label" id="1">
 				<description>Clock label</description>
-				<left>450</left>
-				<top>5</top>
+				<posx>1250</posx>
+				<posy>5</posy>
 				<width>800</width>
 				<height>25</height>
 				<align>right</align>
@@ -56,43 +55,143 @@
 				<animation effect="slide" start="0,0" end="-70,0" time="0" condition="Window.IsVisible(VideoOSD)">conditional</animation>
 			</control>
 			<control type="image" id="1">
-				<left>0</left>
-				<top>230r</top>
-				<width>1280</width>
+				<posx>240</posx>
+				<posy>230r</posy>
+				<width>1040</width>
 				<height>230</height>
-				<texture border="1">HomeNowPlayingBack.png</texture>
+				<texture background="false">dialog_back.png</texture>
+				<!--<texture>HomeNowPlayingBack.png</texture>-->
 			</control>
+		<!--	<control type="image" id="1">
+				<posx>980</posx>
+				<posy>530</posy>
+				<width>76</width>
+				<height>107</height>
+				<texture background="false">$INFO[Player.FolderPath]logo.png</texture>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<visible>!Skin.HasSetting(ClearArt)</visible>
+			</control>
+			<control type="image" id="1">
+				<posx>980</posx>
+				<posy>530</posy>
+				<width>276</width>
+				<height>107</height>
+				<texture background="false">$INFO[Player.FolderPath]clearart.png</texture>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<visible>!Skin.HasSetting(ClearArt)</visible>
+			</control>				-->
 			<control type="image" id="1">
 				<description>cover image</description>
-				<left>20</left>
-				<top>260r</top>
-				<width>300</width>
-				<height>230</height>
-				<texture fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
-				<aspectratio aligny="bottom">keep</aspectratio>
-				<bordertexture border="8">ThumbShadow.png</bordertexture>
-				<bordersize>8</bordersize>
-				<visible>!VideoPlayer.Content(Movies)</visible>
+				<posx>30</posx>
+				<posy>190r</posy>
+				<width>150</width>
+				<height>118</height>
+				<texture diffuse="masks/movie_mask.png" fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
+				<aspectratio aligny="center">stretch</aspectratio>
+				<visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(MusicVideos)</visible>
 			</control>
+			
+			<control type="image" id="1">
+				<description>TV Image</description>
+				<posx>20</posx>
+				<posy>300r</posy>
+				<width>202</width>
+				<height>257</height>
+				<texture diffuse="masks/movie_mask.png" fallback="">OSDTV.png</texture>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<visible>VideoPlayer.Content(Episodes)</visible>
+			</control>
+			
+			
+			
+			
 			<control type="image" id="1">
 				<description>Movie cover image</description>
-				<left>20</left>
-				<top>350r</top>
-				<width>300</width>
-				<height>330</height>
-				<texture fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
-				<aspectratio aligny="bottom">keep</aspectratio>
-				<bordertexture border="8">ThumbShadow.png</bordertexture>
-				<bordersize>8</bordersize>
-				<visible>VideoPlayer.Content(Movies)</visible>
+				<posx>20</posx>
+				<posy>275r</posy>
+				<width>202</width>
+				<height>257</height>
+				<texture diffuse="masks/movie_mask.png" fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<visible>VideoPlayer.Content(Movies) | VideoPlayer.Content(MusicVideos)</visible>
 			</control>
+
+			
+			
 			<control type="group" id="1">
-				<left>330</left>
-				<top>185r</top>
-				<control type="label" id="1">
+					<visible>VideoPlayer.Content(Movies)</visible>
+					<include>Tilt</include>
+					<posx>20</posx>
+					<posy>300r</posy>
+					<control type="image" id="1"> 	
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>210</width>
+						<height>291</height>  	
+						<texture background="true">flagging/cases/560.png</texture> 	
+						<aspectratio aligny="bottom">stretch</aspectratio> 	
+					</control>
+					<!-- 
+					<control type="image" id="1">
+						<posx>-20</posx>
+						<posy>-20</posy>
+						<width>100</width>
+						<height>100</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<texture>$INFO[VideoPlayer.Studio,flagging/studios/,.png]</texture>
+						<visible>!Player.HasAudio</visible>
+					</control>-->
+					<!--<control type="image" id="1"> 	
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>210</width>
+						<height>291</height>   	
+						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">flagging/cases/560.png</texture> 	
+						<aspectratio aligny="bottom">stretch</aspectratio> 	
+					</control>				
+					<control type="image" id="1"> 	
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>210</width>
+						<height>291</height> 	
+						<texture background="true">$INFO[ListItem.VideoResolution,flagging/cases/,.png]</texture> 	
+						<aspectratio aligny="bottom">stretch</aspectratio> 	
+					</control>
+					<control type="image" id="1">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>210</width>
+						<height>291</height> 
+						<aspectratio>stretch</aspectratio>
+						<fadetime>200</fadetime>
+						<texture background="true">cases/$INFO[ListItem.videoresolution]case.png</texture>
+					</control>-->
+					<control type="image" id="1"> 	
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>210</width>
+						<height>291</height> 	
+						<texture background="true">$INFO[VideoPlayer.VideoResolution,flagging/cases/,.png]</texture> 	
+						<aspectratio aligny="bottom">stretch</aspectratio> 	
+					</control>
+					
+				</control>
+			
+			
+			
+			
+			
+			
+			
+			<control type="group" id="1"> <!-- info box-->
+				<posx>242</posx>
+				<posy>230r</posy>
+				<!--<control type="label" id="1">
 					<description>Heading label</description>
-					<left>0</left>
-					<top>0</top>
+					<posx>860</posx>
+					<posy>5</posy>
 					<width>910</width>
 					<height>25</height>
 					<align>left</align>
@@ -103,9 +202,326 @@
 					<shadowcolor>black</shadowcolor>
 					<visible>![VideoPlayer.Content(LiveTV) + Player.Recording]</visible>
 					<animation effect="slide" start="0,0" end="0,25" time="0" condition="!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(MusicVideos) + !VideoPlayer.Content(LiveTV)">conditional</animation>
+				</control>-->
+				
+					
+				<control type="grouplist" id="1"> <!-- line 1 -->
+					<posx>5</posx>
+					<posy>5</posy>
+					<width>1900</width>
+					<height>61</height>
+					
+					<itemgap>5</itemgap>
+					<orientation>horizontal</orientation>
+					
+					<control type="image" id="1">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="1" max="161">auto</width>
+						<height>61</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<texture>$INFO[VideoPlayer.mpaa,flagging/ratings/,.png]</texture>
+						<visible>VideoPlayer.Content(Movies)</visible>
+					</control>
+					
+					
+					
+					<control type="grouplist" id="1"> <!-- Title-->
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="1" max="540">auto</width>
+						<height>61</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<itemgap>5</itemgap>
+						<orientation>horizontal</orientation>
+						
+							
+						<control type="grouplist" id="1">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width min="10" max="600">auto</width>
+							<height>61</height>
+							<orientation>vertical</orientation>
+							<aligny>center</aligny>
+							<itemgap>1</itemgap>
+							
+							<control type="grouplist" id="1">
+								<posx>0</posx>
+								<posy>0</posy>
+								<height>30</height>
+								<orientation>horizontal</orientation>
+								<aligny>center</aligny>
+								
+								<itemgap>0</itemgap>
+								
+								<control type="label" id="1">
+									<description>LiveTV Info label</description>
+									<posx>0</posx>
+									<posy>0</posy>
+									<width min="10" max="1200">auto</width>
+									<height>30</height>
+									<align>left</align>
+									<aligny>center</aligny>
+									<font>font30</font>
+									<label>Channel: $INFO[VideoPlayer.ChannelNumber,[COLOR=blue],[/COLOR]] - </label>
+									<textcolor>white</textcolor>
+									<shadowcolor>black</shadowcolor>
+									<visible>VideoPlayer.Content(LiveTV)</visible>
+								</control>
+								
+								
+								<control type="label" id="1">
+									<description>TV Show label</description>
+									
+									<width min="10" max="750">auto</width>
+									<height>30</height>
+									<align>left</align>
+									<aligny>center</aligny>
+									<font>font30</font>
+									<label>$INFO[VideoPlayer.TVShowTitle] S$INFO[VideoPlayer.Season] E$INFO[VideoPlayer.Episode] - </label>
+									<textcolor>orange</textcolor>
+									
+									<shadowcolor>black</shadowcolor>
+									<visible>VideoPlayer.Content(Episodes)</visible>
+								</control>
+								
+								<control type="label" id="1">
+									<width min="10" max="4810">auto</width>
+									<height>30</height>
+									<font>font30</font>
+									<align>left</align>
+									<aligny>center</aligny>
+									<label>$INFO[VideoPlayer.Title]</label>
+									<textcolor>orange</textcolor>
+									<scroll>true</scroll>
+								</control>
+								
+								<control type="label" id="1">
+									<width min="10" max="40">auto</width>
+									<height>30</height>
+									<font>font10</font>
+									<align>center</align>
+									<aligny>center</aligny>
+									<label>$INFO[VideoPlayer.Year]</label>
+									<textcolor>orange</textcolor>
+									<visible>VideoPlayer.Content(Movies)</visible>
+								</control>
+							</control>
+							
+							
+							<control type="label" id="1">
+								<posx>0</posx>
+								<posy>0</posy>
+								<align>left</align>
+								<font>font10</font>
+								<label>Duration: $INFO[VideoPlayer.Duration] (Finish Time: $INFO[Player.FinishTime])</label>
+								<textcolor>yellow</textcolor>
+								<shadowcolor>black</shadowcolor>
+								
+							</control>
+							
+						</control>
+						
+						
+						
+						
+						
+						
+						<!--<control type="label" id="1">
+							<description>MPAA Rating</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<height>61</height>
+							<font>font30</font>
+							<align>centre</align>
+							<aligny>top</aligny>
+							<label> ($INFO[VideoPlayer.mpaa])</label>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<visible></visible>
+						</control>-->
+					</control>
+					
+					
+					<control type="grouplist" id="1"> <!-- icons-->
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="1" max="500">auto</width>
+						<height>61</height>
+						<align>left</align>
+						<aligny>centre</aligny>
+						<itemgap>5</itemgap>
+						<orientation>horizontal</orientation>
+						
+						<control type="label" id="1">
+							<description>Live TV Icon Spacer</description>
+							<width>100</width>
+							<height>30</height>
+							<font>font10</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label></label>
+							<textcolor>orange</textcolor>
+							<visible>VideoPlayer.Content(LiveTV)</visible>
+						</control>
+						
+						<control type="label" id="1">
+							<description>Tv Show Icon Spacer</description>
+							<width>160</width>
+							<height>30</height>
+							<font>font10</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label></label>
+							<textcolor>orange</textcolor>
+							<visible>VideoPlayer.Content(Episodes)</visible>
+						</control>
+						
+						<control type="image" id="1">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width min="1" max="100">auto</width>
+							<height>61</height>
+							<aspectratio>keep</aspectratio>
+							<align>centre</align>
+							<aligny>centre</aligny>
+							<texture>$INFO[VideoPlayer.Studio,flagging/studios/,.png]</texture>
+							<visible>!Player.HasAudio</visible>
+						</control>
+						
+						<control type="image" id="1">
+							<description>TV Types Image</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>61</width>
+							<height>61</height>
+							<align>centre</align>
+							<aligny>centre</aligny>
+							<aspectratio align="left">keep</aspectratio>
+							<texture>flagging/video/TV.png</texture>
+							<visible>[substring(Player.FilenameAndPath,pdtv) | substring(Player.FilenameAndPath,hdtv) | substring(Player.FilenameAndPath,dsr)] | substring(Player.FilenameAndPath,serien) + !Skin.HasSetting(HideFilenameFlagging) | VideoPlayer.Content(LiveTV) + Player.Playing</visible>
+						</control>
+						
+						<control type="image" id="1">
+							<description>Video Resolution Image</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>61</width>
+							<height>61</height>
+							<aspectratio align="center">keep</aspectratio>
+							<texture>$INFO[VideoPlayer.VideoResolution,flagging/video/,.png]</texture>
+						</control>
+						
+						<control type="image" id="1">
+							<description>Audio Codec Image</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>61</width>
+							<height>61</height>
+							<aspectratio align="center">keep</aspectratio>
+							<texture>$INFO[VideoPlayer.AudioCodec,flagging/audio/,.png]</texture>
+							<visible>!Player.HasAudio</visible>
+						</control>
+						<control type="image" id="1">
+							<description>Audio Channels Image</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>61</width>
+							<height>61</height>
+							<aspectratio align="center">keep</aspectratio>
+							<texture>$INFO[VideoPlayer.AudioChannels,flagging/audio/,.png]</texture>
+							<visible>!Player.HasAudio</visible>
+						</control>
+						
+						
+					</control>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<!--
+					<control type="grouplist" id="1">
+						<width>950</width>
+						<height>40</height>
+						<posx>-20</posx>
+						<posy>-35</posy>-->
+						
+						
+						
+					
+					<!--</control>-->
+					
+					
+					
 				</control>
+				
+				
+				
+				
+			
+				<control type="grouplist" id="1"> <!-- plot-->
+					<posx>10</posx>
+					<posy>80</posy>
+					<width>950</width>
+					<height>100</height>
+					<itemgap>5</itemgap>
+					<orientation>horizontal</orientation>
+					
+					<control type="label" id="1">
+						<width min="10" max="950">auto</width>
+						<height>90</height>
+						<font>font12</font>
+						<align>left</align>
+						<aligny>top</aligny>
+						<label>$INFO[VideoPlayer.Plot]</label>
+						<textcolor>white</textcolor>
+						<wrapmultiline>true</wrapmultiline>
+						<scrollspeed>50</scrollspeed>
+						<visible></visible>
+					</control>
+					
+					<!--<control type="label" id="1">
+						<width min="10" max="950">auto</width>
+						<height>50</height>
+						<font>font12</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[VideoPlayer.Plot]</label>
+						<textcolor>white</textcolor>
+						<wrapmultiline>true</wrapmultiline>
+						<scrollspeed>50</scrollspeed>
+						<visible>VideoPlayer.Content(LiveTV)</visible>
+					</control>-->
+				</control>
+			
+			<!--	<control type="label" id="1">
+					<description>Plot</description>
+					<posx>10</posx>
+					<posy>70</posy>
+					<width>950</width>
+					<height>25</height>
+					<align>left</align>
+					<font>font12</font>
+					<label>$INFO[VideoPlayer.PlotOutline]</label>
+					<wrapmultiline>true</wrapmultiline>
+					<scrollspeed>50</scrollspeed>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<visible>VideoPlayer.Content(Movies)</visible>
+				</control>-->
+				
+				
 				<control type="image" id="1">
-					<top>0</top>
+					<posy>0</posy>
 					<width>50</width>
 					<height>25</height>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
@@ -114,8 +530,8 @@
 				</control>
 				<control type="label" id="1">
 					<description>Heading label</description>
-					<left>50</left>
-					<top>0</top>
+					<posx>50</posx>
+					<posy>0</posy>
 					<width>860</width>
 					<height>25</height>
 					<align>left</align>
@@ -126,11 +542,11 @@
 					<shadowcolor>black</shadowcolor>
 					<visible>VideoPlayer.Content(LiveTV) + Player.Recording</visible>
 				</control>
-				<control type="label" id="1">
+				<!--<control type="label" id="1">
 					<description>Studio label</description>
-					<left>20</left>
-					<top>30</top>
-					<width>910</width>
+					<posx>20</posx>
+					<posy>30</posy>
+					<width>950</width>
 					<height>25</height>
 					<align>left</align>
 					<font>font12</font>
@@ -138,24 +554,12 @@
 					<textcolor>grey2</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<visible>VideoPlayer.Content(Movies)</visible>
-				</control>
-				<control type="label" id="1">
-					<description>TV Show label</description>
-					<left>20</left>
-					<top>30</top>
-					<width>910</width>
-					<height>25</height>
-					<align>left</align>
-					<font>font12</font>
-					<label>$INFO[VideoPlayer.TVShowTitle] ($INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode])</label>
-					<textcolor>grey2</textcolor>
-					<shadowcolor>black</shadowcolor>
-					<visible>VideoPlayer.Content(Episodes)</visible>
-				</control>
+				</control>-->
+				
 				<control type="label" id="1">
 					<description>Music Info label</description>
-					<left>20</left>
-					<top>30</top>
+					<posx>20</posx>
+					<posy>30</posy>
 					<width>910</width>
 					<height>25</height>
 					<align>left</align>
@@ -165,106 +569,12 @@
 					<shadowcolor>black</shadowcolor>
 					<visible>VideoPlayer.Content(MusicVideos)</visible>
 				</control>
-				<control type="label" id="1">
-					<description>LiveTV Info label</description>
-					<left>20</left>
-					<top>30</top>
-					<width>910</width>
-					<height>25</height>
-					<align>left</align>
-					<font>font12</font>
-					<label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelNumber, - ([COLOR=blue],[/COLOR])]</label>
-					<textcolor>grey2</textcolor>
-					<shadowcolor>black</shadowcolor>
-					<visible>VideoPlayer.Content(LiveTV)</visible>
-				</control>
-				<control type="grouplist" id="1">
-					<left>20</left>
-					<top>60</top>
-					<width>910</width>
-					<height>35</height>
-					<itemgap>5</itemgap>
-					<orientation>horizontal</orientation>
-					<control type="label" id="1">
-						<width min="10" max="520">auto</width>
-						<height>30</height>
-						<font>font30</font>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$INFO[Player.Title]</label>
-						<textcolor>orange</textcolor>
-						<scroll>true</scroll>
-					</control>
-					<control type="image" id="1">
-						<description>Video Resolution Image</description>
-						<width>50</width>
-						<height>35</height>
-						<aspectratio align="center">keep</aspectratio>
-						<texture>$INFO[VideoPlayer.VideoResolution,flagging/video/,.png]</texture>
-					</control>
-					<control type="image" id="1">
-						<description>Audio Codec Image</description>
-						<width>85</width>
-						<height>35</height>
-						<aspectratio align="center">keep</aspectratio>
-						<texture>$INFO[VideoPlayer.AudioCodec,flagging/audio/,.png]</texture>
-					</control>
-					<control type="image" id="1">
-						<description>Audio Channels Image</description>
-						<width>50</width>
-						<height>35</height>
-						<aspectratio align="center">keep</aspectratio>
-						<texture>$INFO[VideoPlayer.AudioChannels,flagging/audio/,.png]</texture>
-					</control>
-					<control type="group" id="1">
-						<width>85</width>
-						<height>35</height>
-						<visible>!IsEmpty(VideoPlayer.AudioLanguage)</visible>
-						<control type="image" id="1">
-							<left>5</left>
-							<top>0</top>
-							<description>Audio Language Image</description>
-							<width>80</width>
-							<height>35</height>
-							<texture>flagging/AudioLang.png</texture>
-						</control>
-						<control type="label" id="1">
-							<left>38</left>
-							<top>2</top>
-							<width>47</width>
-							<height>35</height>
-							<font>font13</font>
-							<align>left</align>
-							<label>$INFO[VideoPlayer.AudioLanguage]</label>
-							<textcolor>grey</textcolor>
-						</control>
-					</control>
-					<control type="group" id="1">
-						<width>85</width>
-						<height>35</height>
-						<visible>!IsEmpty(VideoPlayer.SubtitlesLanguage)</visible>
-						<control type="image" id="1">
-							<left>5</left>
-							<top>0</top>
-							<width>80</width>
-							<height>35</height>
-							<texture>flagging/SubLang.png</texture>
-						</control>
-						<control type="label" id="1">
-							<left>38</left>
-							<top>2</top>
-							<width>47</width>
-							<height>35</height>
-							<font>font13</font>
-							<align>left</align>
-							<label>$INFO[VideoPlayer.SubtitlesLanguage]</label>
-							<textcolor>grey</textcolor>
-						</control>
-					</control>
-				</control>
-				<control type="label" id="1">
-					<left>0</left>
-					<top>120</top>
+				
+				
+				
+				<!--<control type="label" id="1">
+					<posx>0</posx>
+					<posy>150</posy>
 					<width>910</width>
 					<height>25</height>
 					<label>$LOCALIZE[31049] $INFO[Player.FinishTime]</label>
@@ -275,13 +585,13 @@
 					<scroll>true</scroll>
 					<visible>!Window.IsVisible(VideoOSD) + !VideoPlayer.Content(LiveTV)</visible>
 					<animation effect="fade" time="200">VisibleChange</animation>
-				</control>
+				</control>-->
 				<control type="label" id="1">
-					<left>0</left>
-					<top>120</top>
+					<posx>0</posx>
+					<posy>120</posy>
 					<width>910</width>
 					<height>25</height>
-					<label>$INFO[VideoPlayer.NextTitle,$LOCALIZE[19031]: ]</label>
+					<label>$INFO[VideoPlayer.NextTitle,$LOCALIZE[209]: ]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12</font>
@@ -291,90 +601,139 @@
 					<animation effect="fade" time="200">VisibleChange</animation>
 				</control>
 			</control>
+			
 			<control type="group" id="1">
-				<left>330</left>
-				<top>95r</top>
+				<posx>250</posx>
+				<posy>45r</posy>
 				<visible>!VideoPlayer.Content(LiveTV) | [VideoPlayer.Content(LiveTV) + VideoPlayer.HasEpg]</visible>
 				<control type="label" id="1">
-					<visible>!VideoPlayer.Content(LiveTV)</visible>
-					<left>0</left>
-					<top>0</top>
+					<posx>0</posx>
+					<posy>0</posy>
 					<width>100</width>
 					<height>40</height>
-					<font>font13</font>
+					<font>font10</font>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$INFO[Player.Time(hh:mm:ss)]</label>
 				</control>
-				<control type="label" id="1">
-					<visible>VideoPlayer.Content(LiveTV)</visible>
-					<left>0</left>
-					<top>0</top>
-					<width>100</width>
-					<height>40</height>
-					<font>font13</font>
-					<align>left</align>
-					<aligny>center</aligny>
-					<label>$INFO[Player.StartTime(hh:mm)]</label>
-				</control>
 				<control type="progress" id="1">
 					<description>ProgressbarCache</description>
-					<left>100</left>
-					<top>15</top>
+					<posx>100</posx>
+					<posy>20</posy>
 					<width>720</width>
-					<height>16</height>
+					<height>5</height>
 					<info>Player.ProgressCache</info>
 					<midtexture border="6,0,6,0">OSDProgressMidLight.png</midtexture>
 				</control>
 				<control type="progress" id="1">
 					<description>Progressbar</description>
-					<left>100</left>
-					<top>15</top>
+					<posx>100</posx>
+					<posy>20</posy>
 					<width>720</width>
-					<height>16</height>
+					<height>5</height>
 					<info>Player.Progress</info>
 				</control>
 				<control type="label" id="1">
-					<visible>!VideoPlayer.Content(LiveTV)</visible>
-					<left>820</left>
-					<top>0</top>
+					<posx>920</posx>
+					<posy>0</posy>
 					<width>100</width>
 					<height>40</height>
-					<font>font13</font>
+					<font>font10</font>
 					<align>right</align>
 					<aligny>center</aligny>
-					<label>$INFO[Player.Duration(hh:mm:ss)]</label>
-				</control>
-				<control type="label" id="1">
-					<visible>VideoPlayer.Content(LiveTV)</visible>
-					<left>820</left>
-					<top>0</top>
-					<width>100</width>
-					<height>40</height>
-					<font>font13</font>
-					<align>right</align>
-					<aligny>center</aligny>
-					<label>$INFO[Player.FinishTime(hh:mm)]</label>
+					<label>$INFO[Player.TimeRemaining(hh:mm:ss)]</label>
 				</control>
 			</control>
+			
+			
+			<!--<control type="image" id="1">
+				<posx>400</posx>
+				<posy>-10</posy>
+				<width>100</width>
+				<height>64</height>
+				<aspectratio>keep</aspectratio>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture>$INFO[VideoPlayer.Studio,flagging/studios/,.png]</texture>
+				<visible>!Player.HasAudio</visible>
+			</control>-->
+			<control type="image" id="1">
+				<posx>400</posx>
+				<posy>-10</posy>
+				<width>100</width>
+				<height>64</height>
+				<aspectratio>keep</aspectratio>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture>$INFO[VideoPlayer.ChannelName,flagging/studios/,.png]</texture>
+				<visible>!Player.HasAudio + VideoPlayer.Content(LiveTV)</visible>
+			</control>
+			<control type="image" id="1">
+				<description>Bluray Image</description>
+				<posx>650</posx>
+				<posy>5</posy>
+				<width>80</width>
+				<height>35</height>
+				<aspectratio align="left">keep</aspectratio>
+				<texture>flagging/video/bluray.png</texture>
+				<visible>[substring(Player.FilenameAndPath,bluray) | substring(Player.FilenameAndPath,bdrip)] + !Skin.HasSetting(HideFilenameFlagging)</visible>
+			</control>
+			<control type="image" id="1">
+				<description>HDDVD Image</description>
+				<posx>650</posx>
+				<posy>5</posy>
+				<width>80</width>
+				<height>35</height>
+				<aspectratio align="left">keep</aspectratio>
+				<texture>flagging/video/hddvd.png</texture>
+				<visible>substring(Player.FilenameAndPath,hddvd) + !Skin.HasSetting(HideFilenameFlagging)</visible>
+			</control>
+			<control type="image" id="1">
+				<description>DVD Image</description>
+				<posx>650</posx>
+				<posy>5</posy>
+				<width>80</width>
+				<height>35</height>
+				<aspectratio align="left">keep</aspectratio>
+				<texture>flagging/video/dvd.png</texture>
+				<visible>[substring(Player.FilenameAndPath,dvd) + ![substring(Player.FilenameAndPath,hddvd) | substring(Player.FilenameAndPath,bluray) | substring(Player.FilenameAndPath,bdrip)]] + !Skin.HasSetting(HideFilenameFlagging)</visible>
+			</control>
+			
+			<control type="image" id="1">
+				<description>VHS Image</description>
+				<posx>650</posx>
+				<posy>5</posy>
+				<width>80</width>
+				<height>35</height>
+				<aspectratio align="left">keep</aspectratio>
+				<texture>flagging/video/vhs.png</texture>
+				<visible>substring(Player.FilenameAndPath,vhs) + !Skin.HasSetting(HideFilenameFlagging)</visible>
+			</control>			
 		</control>
+		
+		
+		
+		
+		
+		
+		
 		<!-- codec info -->
 		<control type="group" id="0">
-			<left>0</left>
-			<top>20</top>
+			<posx>0</posx>
+			<posy>20</posy>
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<control type="image">
 				<description>media info background image</description>
-				<left>0</left>
-				<top>0</top>
+				<posx>0</posx>
+				<posy>0</posy>
 				<width>1280</width>
 				<height>140</height>
 				<texture>black-back.png</texture>
 			</control>
 			<control type="label" id="10">
 				<description>row 1 label</description>
-				<left>50</left>
-				<top>10</top>
+				<posx>50</posx>
+				<posy>10</posy>
 				<width>1180</width>
 				<height>30</height>
 				<align>left</align>
@@ -384,8 +743,8 @@
 			</control>
 			<control type="label" id="11">
 				<description>row 2 label</description>
-				<left>50</left>
-				<top>55</top>
+				<posx>50</posx>
+				<posy>40</posy>
 				<width>1180</width>
 				<height>30</height>
 				<align>left</align>
@@ -395,8 +754,8 @@
 			</control>
 			<control type="label" id="12">
 				<description>row 3 label</description>
-				<left>50</left>
-				<top>100</top>
+				<posx>50</posx>
+				<posy>85</posy>
 				<width>1180</width>
 				<height>30</height>
 				<align>left</align>
@@ -406,8 +765,8 @@
 			</control>
 		</control>
 		<control type="selectbutton" id="503">
-			<left>440</left>
-			<top>100</top>
+			<posx>440</posx>
+			<posy>100</posy>
 			<width>400</width>
 			<height>100</height>
 			<font>font13caps</font>
@@ -421,19 +780,19 @@
 		</control>
 		<control type="group">
 			<visible>Player.ShowCodec + VideoPlayer.Content(LiveTV) + system.getbool(pvrplayback.signalquality)</visible>
-			<top>165</top>
+			<posy>165</posy>
 			<control type="image">
 				<description>media info background image</description>
-				<left>0</left>
-				<top>0</top>
+				<posx>0</posx>
+				<posy>0</posy>
 				<width>1280</width>
 				<height>220</height>
 				<texture>black-back.png</texture>
 			</control>
 			<control type="label">
 				<description>Header</description>
-				<left>50</left>
-				<top>5</top>
+				<posx>50</posx>
+				<posy>5</posy>
 				<width>1200</width>
 				<height>25</height>
 				<label>$LOCALIZE[19005]</label>
@@ -444,8 +803,8 @@
 			</control>
 			<control type="label">
 				<description>Backend</description>
-				<left>50</left>
-				<top>40</top>
+				<posx>50</posx>
+				<posy>40</posy>
 				<width>165</width>
 				<height>25</height>
 				<label>$LOCALIZE[19012]:</label>
@@ -456,8 +815,8 @@
 			</control>
 			<control type="label">
 				<description>Backend value</description>
-				<left>220</left>
-				<top>40</top>
+				<posx>220</posx>
+				<posy>40</posy>
 				<width>1000</width>
 				<height>25</height>
 				<label>$INFO[PVR.ActStreamClient]</label>
@@ -468,8 +827,8 @@
 			</control>
 			<control type="label">
 				<description>Device</description>
-				<left>50</left>
-				<top>65</top>
+				<posx>50</posx>
+				<posy>65</posy>
 				<width>165</width>
 				<height>25</height>
 				<label>$LOCALIZE[19006]:</label>
@@ -480,8 +839,8 @@
 			</control>
 			<control type="label">
 				<description>Device value</description>
-				<left>220</left>
-				<top>65</top>
+				<posx>220</posx>
+				<posy>65</posy>
 				<width>1000</width>
 				<height>25</height>
 				<label>$INFO[PVR.ActStreamDevice]</label>
@@ -492,8 +851,8 @@
 			</control>
 			<control type="label">
 				<description>Status</description>
-				<left>50</left>
-				<top>90</top>
+				<posx>50</posx>
+				<posy>90</posy>
 				<width>165</width>
 				<height>25</height>
 				<label>$LOCALIZE[19007]:</label>
@@ -504,8 +863,8 @@
 			</control>
 			<control type="label">
 				<description>Status value</description>
-				<left>220</left>
-				<top>90</top>
+				<posx>220</posx>
+				<posy>90</posy>
 				<width>1000</width>
 				<height>25</height>
 				<label>$INFO[PVR.ActStreamStatus]</label>
@@ -516,8 +875,8 @@
 			</control>
 			<control type="label">
 				<description>Signal</description>
-				<left>50</left>
-				<top>115</top>
+				<posx>50</posx>
+				<posy>115</posy>
 				<width>165</width>
 				<height>25</height>
 				<label>$LOCALIZE[19008]:</label>
@@ -528,16 +887,16 @@
 			</control>
 			<control type="progress">
 				<description>Progressbar</description>
-				<left>220</left>
-				<top>122</top>
+				<posx>220</posx>
+				<posy>122</posy>
 				<width>910</width>
 				<height>14</height>
 				<info>PVR.ActStreamProgrSignal</info>
 			</control>
 			<control type="label">
 				<description>Signal value</description>
-				<left>1200</left>
-				<top>115</top>
+				<posx>1200</posx>
+				<posy>115</posy>
 				<width>180</width>
 				<height>25</height>
 				<label>$INFO[PVR.ActStreamSignal]</label>
@@ -548,8 +907,8 @@
 			</control>
 			<control type="label">
 				<description>SNR</description>
-				<left>50</left>
-				<top>140</top>
+				<posx>50</posx>
+				<posy>140</posy>
 				<width>165</width>
 				<height>25</height>
 				<label>$LOCALIZE[19009]:</label>
@@ -560,8 +919,8 @@
 			</control>
 			<control type="progress">
 				<description>Progressbar</description>
-				<left>220</left>
-				<top>147</top>
+				<posx>220</posx>
+				<posy>147</posy>
 				<width>910</width>
 				<height>14</height>
 				<overlaytexture>-</overlaytexture>
@@ -569,8 +928,8 @@
 			</control>
 			<control type="label">
 				<description>SNR value</description>
-				<left>1200</left>
-				<top>140</top>
+				<posx>1200</posx>
+				<posy>140</posy>
 				<width>180</width>
 				<height>25</height>
 				<label>$INFO[PVR.ActStreamSNR]</label>
@@ -581,8 +940,8 @@
 			</control>
 			<control type="label">
 				<description>BER</description>
-				<left>50</left>
-				<top>165</top>
+				<posx>50</posx>
+				<posy>165</posy>
 				<width>165</width>
 				<height>25</height>
 				<label>$LOCALIZE[19010]:</label>
@@ -593,9 +952,9 @@
 			</control>
 			<control type="label">
 				<description>BER value</description>
-				<left>220</left>
-				<top>165</top>
-				<width>165</width>
+				<posx>220</posx>
+				<posy>165</posy>
+				<width>1000</width>
 				<height>25</height>
 				<label>$INFO[PVR.ActStreamBER]</label>
 				<align>left</align>
@@ -605,8 +964,8 @@
 			</control>
 			<control type="label">
 				<description>UNC</description>
-				<left>390</left>
-				<top>165</top>
+				<posx>430</posx>
+				<posy>165</posy>
 				<width>165</width>
 				<height>25</height>
 				<label>$LOCALIZE[19011]:</label>
@@ -617,9 +976,9 @@
 			</control>
 			<control type="label">
 				<description>UNC value</description>
-				<left>560</left>
-				<top>165</top>
-				<width>165</width>
+				<posx>600</posx>
+				<posy>165</posy>
+				<width>1000</width>
 				<height>25</height>
 				<label>$INFO[PVR.ActStreamUNC]</label>
 				<align>left</align>
@@ -628,33 +987,9 @@
 				<textcolor>white</textcolor>
 			</control>
 			<control type="label">
-				<description>Service</description>
-				<left>730</left>
-				<top>165</top>
-				<width>165</width>
-				<height>25</height>
-				<label>$LOCALIZE[19099]:</label>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<textcolor>grey2</textcolor>
-			</control>
-			<control type="label">
-				<description>Service value</description>
-				<left>900</left>
-				<top>165</top>
-				<width>330</width>
-				<height>25</height>
-				<label>$INFO[PVR.ActStreamServiceName]</label>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<textcolor>white</textcolor>
-			</control>
-			<control type="label">
 				<description>Encryption</description>
-				<left>50</left>
-				<top>190</top>
+				<posx>50</posx>
+				<posy>190</posy>
 				<width>165</width>
 				<height>25</height>
 				<label>$LOCALIZE[19015]:</label>
@@ -665,59 +1000,11 @@
 			</control>
 			<control type="label">
 				<description>Encryption value</description>
-				<left>220</left>
-				<top>190</top>
-				<width>165</width>
+				<posx>220</posx>
+				<posy>190</posy>
+				<width>1000</width>
 				<height>25</height>
 				<label>$INFO[PVR.ActStreamEncryptionName]</label>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<textcolor>white</textcolor>
-			</control>
-			<control type="label">
-				<description>Provider</description>
-				<left>390</left>
-				<top>190</top>
-				<width>165</width>
-				<height>25</height>
-				<label>$LOCALIZE[19101]:</label>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<textcolor>grey2</textcolor>
-			</control>
-			<control type="label">
-				<description>Provider value</description>
-				<left>560</left>
-				<top>190</top>
-				<width>165</width>
-				<height>25</height>
-				<label>$INFO[PVR.ActStreamProviderName]</label>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<textcolor>white</textcolor>
-			</control>
-			<control type="label">
-				<description>Mux</description>
-				<left>730</left>
-				<top>190</top>
-				<width>165</width>
-				<height>25</height>
-				<label>$LOCALIZE[19100]:</label>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<textcolor>grey2</textcolor>
-			</control>
-			<control type="label">
-				<description>Mux value</description>
-				<left>900</left>
-				<top>190</top>
-				<width>330</width>
-				<height>25</height>
-				<label>$INFO[PVR.ActStreamMux]</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
