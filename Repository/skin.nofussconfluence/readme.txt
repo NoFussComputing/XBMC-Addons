@@ -1,0 +1,1 @@
+Skin info available at http://nofusscomputing.com/wiki/public/projects/xbmc_addons/nofussconfluence
