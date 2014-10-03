@@ -552,7 +552,54 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
+					<control type="label" id="229">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>Custom Playlists</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="230">
+						<description>Custom TV Shows Playlist</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>Custom TV Show Playlist</label>
+						<onclick>Skin.ToggleSetting(HomeMenuTVShowPlaylist)</onclick>
+						<selected>Skin.HasSetting(HomeMenuTVShowPlaylist)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<control type="radiobutton" id="231">
+						<description>Custom Movies Playlist</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>Custom Movies Playlist</label>
+						<onclick>Skin.ToggleSetting(HomeMenuMoviePlaylist)</onclick>
+						<selected>Skin.HasSetting(HomeMenuMoviePlaylist)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					
+					
+					
 				</control>
+				<!-- here -->
+				
+				
+				
+				
+				
+				
+				
 				<control type="scrollbar" id="60">
 					<left>1060</left>
 					<top>60</top>
