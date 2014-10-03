@@ -1,6 +1,6 @@
-No Fuss Computings XBMC Addon Repository
+No Fuss Computings XBMC Skin No Fuss Confluence
 ===========
 
-This repsoitory has been created to enable end users to use our XBMC addons.
-
 Project home [NFC Addon Wiki](http://nofusscomputing.com/wiki/public/projects/xbmc_addons/home)
+
+Skin Information http://nofusscomputing.com/wiki/public/projects/xbmc_addons/nofussconfluence
