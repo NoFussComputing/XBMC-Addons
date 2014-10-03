@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
   id="skin.nofussconfluence"
-  version="0.1"
+  version="0.1.1410031838"
   name="No Fuss Confluence"
   provider-name="No Fuss Computing">
   <requires>

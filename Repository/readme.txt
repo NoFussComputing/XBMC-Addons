@@ -1,1 +1,0 @@
-This folder is where the source code for addons will be kept. Each addon will be in a seperate folder.
