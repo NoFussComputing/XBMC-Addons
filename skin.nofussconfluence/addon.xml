@@ -3,9 +3,9 @@
   id="skin.nofussconfluence"
   version="0.1.1410031838"
   name="No Fuss Confluence"
-  provider-name="No Fuss Computing">
+  provider-name="No Fuss Computing (credits Team-XBMC)">
   <requires>
-    <import addon="xbmc.gui" version="5.3.0"/>
+    <import addon="xbmc.gui" version="4.0.0"/>
   </requires>
   <extension
     point="xbmc.gui.skin"
@@ -16,17 +16,8 @@
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">No Fuss Confluence, a skin inspired by the Default Conluence skin.</summary>
-    <summary lang="en_AU">No Fuss Confluence, a skin inspired by the Default Conluence skin.</summary>
-    <summary lang="en_NZ">No Fuss Confluence, a skin inspired by the Default Conluence skin.</summary>
-    <summary lang="en_US">No Fuss Confluence, a skin inspired by the Default Conluence skin.</summary>
-    <description lang="en">No Fuss Confluence is a skin inspired by the default XBMC Confluence skin. This skin has been customized from features availible in other skins.</description>
-    <description lang="en_AU">No Fuss Confluence is a skin inspired by the default XBMC Confluence skin. This skin has been customized from features availible in other skins.</description>
-    <description lang="en_NZ">No Fuss Confluence is a skin inspired by the default XBMC Confluence skin. This skin has been customized from features availible in other skins.</description>
-    <description lang="en_US">No Fuss Confluence is a skin inspired by the default XBMC Confluence skin. This skin has been customized from features availible in other skins.</description>
-    <disclaimer lang="en">.</disclaimer>
-    <disclaimer lang="en_AU">.</disclaimer>
-    <disclaimer lang="en_NZ">.</disclaimer>
-    <disclaimer lang="en_US">.</disclaimer>
+	<description lang="en">No Fuss Confluence is a skin inspired by the default XBMC Confluence skin. This skin has been customized from features availible in other skins.</description>
+    <disclaimer lang="en">Confluence</disclaimer>
     <platform>all</platform>
   </extension>
 </addon>
