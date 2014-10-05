@@ -222,7 +222,7 @@
 						<aspectratio>keep</aspectratio>
 						<align>center</align>
 						<aligny>center</aligny>
-						<texture>$INFO[VideoPlayer.mpaa,flagging/ratings/,.png]</texture>
+						<texture>flagging/ratings/$INFO[Skin.String(Parental_CC)]_$INFO[VideoPlayer.mpaa].png</texture>
 						<visible>VideoPlayer.Content(Movies)</visible>
 					</control>
 					
