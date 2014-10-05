@@ -344,6 +344,29 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>Skin.HasSetting(Use_Startup_Playlist)</enable>
 					</control>
+					<control type="label" id="11109">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>Parental Rating's</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="11110">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>Rating Prefix</label>
+						<label2>$INFO[Skin.String(Parental_CC)]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(Parental_CC)</onclick>
+						<selected>Skin.HasSetting(Parental_CC)</selected>
+					</control>
 				</control>
 				<control type="scrollbar" id="60">
 					<left>1060</left>
@@ -588,7 +611,6 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					
 					
 					
 				</control>
