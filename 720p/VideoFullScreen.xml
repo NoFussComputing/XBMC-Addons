@@ -87,7 +87,7 @@
 				<width>150</width>
 				<height>118</height>
 				<texture diffuse="masks/movie_mask.png" fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
-				<aspectratio aligny="center">stretch</aspectratio>
+				<aspectratio aligny="center">keep</aspectratio>
 				<visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(MusicVideos)</visible>
 			</control>
 			
