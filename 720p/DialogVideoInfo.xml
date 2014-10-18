@@ -161,9 +161,9 @@
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
-						<width>270</width>
+						<width>330</width>
 						<height>380</height>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>keep</aspectratio>
 						<bordertexture border="5">button-nofocus.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
