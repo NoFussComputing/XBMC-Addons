@@ -163,7 +163,7 @@
 						<top>0</top>
 						<width>270</width>
 						<height>380</height>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>keep</aspectratio>
 						<bordertexture border="5">button-nofocus.png</bordertexture>
 						<bordersize>4</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
