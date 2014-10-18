@@ -161,7 +161,7 @@
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
-						<width>270</width>
+						<width>330</width>
 						<height>380</height>
 						<aspectratio>keep</aspectratio>
 						<bordertexture border="5">button-nofocus.png</bordertexture>
