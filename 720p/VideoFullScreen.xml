@@ -84,7 +84,7 @@
 				<description>cover image</description>
 				<posx>30</posx>
 				<posy>190r</posy>
-				<width>150</width>
+				<width>200</width>
 				<height>118</height>
 				<texture diffuse="masks/movie_mask.png" fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
 				<aspectratio aligny="center">keep</aspectratio>
