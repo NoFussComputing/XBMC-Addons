@@ -859,7 +859,7 @@
 				<posx>490</posx>
 				<posy>-93</posy>
 				<width>300</width>
-				<label>$LOCALIZE[50034]: $INFO[Window(Home).Property(Music.AlbumsCount)]</label>
+				<label>Music Albums: $INFO[Window(Home).Property(Music.AlbumsCount)]</label>
 				<align>center</align>
 				<visible>Container(9000).HasFocus(3)</visible>
 			</control>
@@ -867,7 +867,7 @@
 				<posx>490</posx>
 				<posy>-93</posy>
 				<width>300</width>
-				<label>$LOCALIZE[50035]: $INFO[Window(Home).Property(MusicVideos.Count)]</label>
+				<label>Music Videos: $INFO[Window(Home).Property(MusicVideos.Count)]</label>
 				<align>center</align>
 				<visible>Container(9000).HasFocus(17)</visible>
 			</control>
