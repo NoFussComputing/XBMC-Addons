@@ -267,7 +267,6 @@
 								<height>30</height>
 								<orientation>horizontal</orientation>
 								<aligny>center</aligny>
-								
 								<itemgap>0</itemgap>
 								
 								<control type="label" id="1">
@@ -296,13 +295,12 @@
 									<font>font30</font>
 									<label>$INFO[VideoPlayer.TVShowTitle] S$INFO[VideoPlayer.Season] E$INFO[VideoPlayer.Episode] - </label>
 									<textcolor>orange</textcolor>
-									
 									<shadowcolor>black</shadowcolor>
 									<visible>VideoPlayer.Content(Episodes)</visible>
 								</control>
 								
 								<control type="label" id="1">
-									<width min="10" max="4810">auto</width>
+									<width min="10" max="410">auto</width>
 									<height>30</height>
 									<font>font30</font>
 									<align>left</align>
