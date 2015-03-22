@@ -2,6 +2,24 @@
 	<defaultcontrol>-</defaultcontrol>
 	<controls>
 		<!-- media infos -->
+		
+		<control type="image" id="1">
+			<posx>-1130</posx>
+			<posy>0</posy>
+			<height>50</height>
+			<texture background="false">$INFO[Player.FolderPath]logo.png</texture>
+			<aspectratio>keep</aspectratio>
+		</control>
+		<control type="image" id="1">
+			<posx>1150</posx>
+			<posy>688</posy>
+			<width min="1" max="161">auto</width>
+			<height>30</height>
+			<aspectratio>keep</aspectratio>
+			<texture>flagging/ratings/$INFO[Skin.String(Parental_CC)]_$INFO[VideoPlayer.mpaa].png</texture>
+			<visible>VideoPlayer.Content(Movies)</visible>
+		</control>
+		
 		<control type="group" id="1">
 			<visible>[Player.ShowInfo | Window.IsActive(VideoOSD)] + ![Window.IsVisible(123) | Window.IsVisible(124) | Window.IsVisible(125) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
 			<animation effect="fade" time="200">VisibleChange</animation>
@@ -62,16 +80,16 @@
 				<texture background="false">dialog_back.png</texture>
 				<!--<texture>HomeNowPlayingBack.png</texture>-->
 			</control>
-		<!--	<control type="image" id="1">
+			<control type="image" id="1">
 				<posx>980</posx>
 				<posy>530</posy>
 				<width>76</width>
 				<height>107</height>
 				<texture background="false">$INFO[Player.FolderPath]logo.png</texture>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<visible>!Skin.HasSetting(ClearArt)</visible>
+				<!--<visible>!Skin.HasSetting(ClearArt)</visible>-->
 			</control>
-			<control type="image" id="1">
+			<!--<control type="image" id="1">
 				<posx>980</posx>
 				<posy>530</posy>
 				<width>276</width>
@@ -84,10 +102,10 @@
 				<description>cover image</description>
 				<posx>30</posx>
 				<posy>190r</posy>
-				<width>150</width>
+				<width>200</width>
 				<height>118</height>
 				<texture diffuse="masks/movie_mask.png" fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
-				<aspectratio aligny="center">stretch</aspectratio>
+				<aspectratio aligny="center">keep</aspectratio>
 				<visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(MusicVideos)</visible>
 			</control>
 			
@@ -214,31 +232,18 @@
 					<itemgap>5</itemgap>
 					<orientation>horizontal</orientation>
 					
-					
-					
-					<control type="group" id="1">
-						<visible>VideoPlayer.Content(Movies)</visible>
-						<include>Tilt</include>
-						<posx>20</posx>
-						<posy>300r</posy>
-						<height>61</height>
+					<control type="image" id="1">
+						<posx>0</posx>
+						<posy>0</posy>
 						<width min="1" max="161">auto</width>
-						<control type="image" id="1">
-							<aspectratio>keep</aspectratio>
-							<align>center</align>
-							<aligny>center</aligny>
-							<texture>flagging/ratings/$INFO[Skin.String(Parental_CC)]_default.png</texture>
-							<visible>VideoPlayer.Content(Movies)</visible>
-						</control>
-						
-						<control type="image" id="1">
-							<aspectratio>keep</aspectratio>
-							<align>center</align>
-							<aligny>center</aligny>
-							<texture>flagging/ratings/$INFO[Skin.String(Parental_CC)]_$INFO[VideoPlayer.mpaa].png</texture>
-							<visible>VideoPlayer.Content(Movies)</visible>
-						</control>
+						<height>61</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<aligny>center</aligny>
+						<texture>flagging/ratings/$INFO[Skin.String(Parental_CC)]_$INFO[VideoPlayer.mpaa].png</texture>
+						<visible>VideoPlayer.Content(Movies)</visible>
 					</control>
+					
 					
 					
 					<control type="grouplist" id="1"> <!-- Title-->
@@ -267,6 +272,7 @@
 								<height>30</height>
 								<orientation>horizontal</orientation>
 								<aligny>center</aligny>
+								
 								<itemgap>0</itemgap>
 								
 								<control type="label" id="1">
@@ -295,12 +301,13 @@
 									<font>font30</font>
 									<label>$INFO[VideoPlayer.TVShowTitle] S$INFO[VideoPlayer.Season] E$INFO[VideoPlayer.Episode] - </label>
 									<textcolor>orange</textcolor>
+									
 									<shadowcolor>black</shadowcolor>
 									<visible>VideoPlayer.Content(Episodes)</visible>
 								</control>
 								
 								<control type="label" id="1">
-									<width min="10" max="410">auto</width>
+									<width min="10" max="4810">auto</width>
 									<height>30</height>
 									<font>font30</font>
 									<align>left</align>
@@ -608,7 +615,7 @@
 					<font>font12</font>
 					<textcolor>grey</textcolor>
 					<scroll>true</scroll>
-					<visible>VideoPlayer.Content(LiveTV)</visible>
+					<visible>!Window.IsVisible(VideoOSD) + VideoPlayer.Content(LiveTV)</visible>
 					<animation effect="fade" time="200">VisibleChange</animation>
 				</control>
 			</control>
