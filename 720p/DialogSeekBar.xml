@@ -58,7 +58,7 @@
 				<texture>HomeNowPlayingBack.png</texture>
 				<visible>!Player.HasAudio</visible>
 			</control>
-			<control type="image">
+			<!--<control type="image">
 				<posx>980</posx>
 				<posy>530</posy>
 				<width>276</width>
@@ -76,7 +76,7 @@
 				<texture background="false">$INFO[Player.FolderPath]clearart.png</texture>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
 				<visible>!Skin.HasSetting(ClearArt)</visible>
-			</control>	
+			</control>	-->
 
 
 
@@ -112,14 +112,22 @@
 				<!--<texture>HomeNowPlayingBack.png</texture>-->
 			</control>
 			<control type="image" id="1">
-				<posx>980</posx>
-				<posy>530</posy>
-				<width>76</width>
-				<height>107</height>
-				<texture background="false">$INFO[Player.FolderPath]logo.png</texture>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<visible>!Skin.HasSetting(ClearArt)</visible>
+				<posx>70</posx>
+				<posy>40</posy>
+				<height>250</height>
+				<texture background="false">$INFO[Player.FolderPath]../logo.png</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>VideoPlayer.Content(Episodes)</visible>
 			</control>
+			<control type="image" id="1">
+				<posx>70</posx>
+				<posy>40</posy>
+				<height>250</height>
+				<texture background="false">$INFO[Player.FolderPath]logo.png</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>VideoPlayer.Content(Movies)</visible>
+			</control>
+			
 			
 			
 			
@@ -667,6 +675,11 @@
 					<animation effect="fade" time="200">VisibleChange</animation>
 				</control>
 			</control>
+			
+			
+			
+			
+			
 			<control type="group" id="1">
 				<posx>250</posx>
 				<posy>45r</posy>
