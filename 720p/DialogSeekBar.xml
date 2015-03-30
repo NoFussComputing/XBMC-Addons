@@ -127,7 +127,7 @@
 				<aspectratio>keep</aspectratio>
 				<visible>VideoPlayer.Content(Movies)</visible>
 			</control>
-			
+			<!--
 			
 			
 			
@@ -139,7 +139,7 @@
 				<texture background="false">$INFO[Player.FolderPath]clearart.png</texture>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
 				<visible>!Skin.HasSetting(ClearArt)</visible>
-			</control>				
+			</control>-->				
 			
 			
 			<control type="image" id="1">
