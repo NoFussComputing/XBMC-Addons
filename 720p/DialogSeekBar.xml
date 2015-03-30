@@ -123,14 +123,14 @@
 				<posx>70</posx>
 				<posy>40</posy>
 				<height>250</height>
-				<texture background="false">$INFO[Player.FolderPath]logo.png</texture>
+				<texture background="false">$INFO[Player.FolderPath]clearart.png</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>VideoPlayer.Content(Movies)</visible>
 			</control>
+			
+			
+			
 			<!--
-			
-			
-			
 			<control type="image" id="1">
 				<posx>980</posx>
 				<posy>530</posy>
