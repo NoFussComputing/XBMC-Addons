@@ -745,13 +745,15 @@
 			</control>
 			<control type="grouplist">
 				<description>MPAA Rating Flagging Images</description>
-				<left>95</left>
+				<left>440</left>
 				<top>360</top>
 				<width>800</width>
-				<align>right</align>
-				<itemgap>0</itemgap>
-				<orientation>horizontal</orientation>
-				<include>VideoMPAAFlaggingConditions</include>
+				<height>36</height>
+				<control type="image" id="1">
+					<height>36</height>
+					<aspectratio>keep</aspectratio>
+					<texture>flagging/ratings/$INFO[Skin.String(Parental_CC)]_$INFO[ListItem.Mpaa].png</texture>
+				</control>
 			</control>
 		</control>
 	</include>
